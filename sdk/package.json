@@ -1,0 +1,35 @@
+{
+  "name": "@packages/ai",
+  "version": "1.0.0",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "module",
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "dev": "tsdown --watch",
+    "lint": "echo 'No linting configured'",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@vitest/coverage-v8": "3.2.0",
+    "vitest": "3.2.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "@google/genai": "^0.10.0",
+    "openai": "^5.10.1",
+    "tsdown": "^0.12.9"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**",
+    "README.md",
+    "package.json"
+  ]
+}
