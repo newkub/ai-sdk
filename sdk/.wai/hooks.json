@@ -1,0 +1,28 @@
+{
+  "hooks": [
+    {
+      "id": "pre-commit",
+      "name": "Pre-commit Checks",
+      "description": "Run checks before committing code",
+      "trigger": "pre-commit",
+      "enabled": true,
+      "actions": {
+        "lint": true,
+        "test": true,
+        "securityScan": true
+      }
+    },
+    {
+      "id": "post-merge",
+      "name": "Post-merge Actions",
+      "description": "Actions to run after merging code",
+      "trigger": "post-merge",
+      "enabled": true,
+      "actions": {
+        "updateDependencies": true,
+        "runTests": true,
+        "deployPreview": true
+      }
+    }
+  ]
+}

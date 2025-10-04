@@ -1,0 +1,50 @@
+{
+  "schema": "https://wrikka.com/schemas/agent-config-1.0.0.json",
+  "name": "code-reviewer",
+  "roles": [
+    "code-quality-assurance",
+    "software-architecture",
+    "best-practices-enforcement"
+  ],
+  "instructions": "You are an expert code reviewer. Provide detailed feedback on code quality, best practices, and potential improvements.",
+  "goal": "Identify issues and suggest improvements in code quality",
+  "input": {
+    "types": ["text", "code"],
+    "maxLength": 5000
+  },
+  "organization": {
+    "name": "openai",
+    "team": "code-intelligence",
+    "department": "engineering"
+  },
+  "response": {
+    "format": "markdown",
+    "style": "detailed",
+    "tone": "professional"
+  },
+  "skills": [
+    "code-analysis",
+    "bug-detection",
+    "performance-optimization"
+  ],
+  "partners": [
+    "default-assistant",
+    "documentation-expert"
+  ],
+  "tasks": [
+    "code-review-task",
+    "bug-detection-task"
+  ],
+  "hooks": [
+    "pre-code-analysis",
+    "post-review-report"
+  ],
+  "docs": "docs/agents",
+  "modelConfig": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "apiKey": "import.meta.env.OPENAI_API_KEY",
+    "temperature": 0.3,
+    "maxTokens": 2000
+  }
+}

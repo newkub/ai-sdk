@@ -1,0 +1,50 @@
+{
+  "schema": "https://wrikka.com/schemas/agent-config-1.0.0.json",
+  "name": "default-assistant",
+  "roles": [
+    "customer-support",
+    "information-retrieval",
+    "text-processing"
+  ],
+  "instructions": "You are a helpful AI assistant. Answer questions clearly and concisely.",
+  "goal": "Provide accurate and helpful responses to user queries",
+  "input": {
+    "types": ["text"],
+    "maxLength": 2000
+  },
+  "organization": {
+    "name": "openai",
+    "team": "general-ai",
+    "department": "research"
+  },
+  "response": {
+    "format": "text",
+    "style": "concise",
+    "tone": "helpful"
+  },
+  "skills": [
+    "question-answering",
+    "text-summarization",
+    "language-translation"
+  ],
+  "partners": [
+    "code-reviewer",
+    "documentation-expert"
+  ],
+  "tasks": [
+    "general-query",
+    "text-summarization-task"
+  ],
+  "hooks": [
+    "pre-query-processing",
+    "post-response-validation"
+  ],
+  "docs": "docs/getting-started",
+  "modelConfig": {
+    "provider": "openai",
+    "model": "gpt-3.5-turbo",
+    "apiKey": "import.meta.env.OPENAI_API_KEY",
+    "temperature": 0.7,
+    "maxTokens": 1000
+  }
+}

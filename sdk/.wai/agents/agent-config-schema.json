@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://wrikka.com/schemas/agent-config-1.0.0.json",
+  "title": "AI Agent Configuration",
+  "description": "Schema for configuring AI agents with roles, capabilities, and model settings",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "string",
+      "description": "Schema version identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Unique name identifier for the agent"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of roles this agent can perform"
+    },
+    "instructions": {
+      "type": "string",
+      "description": "Detailed instructions for the agent behavior"
+    },
+    "goal": {
+      "type": "string",
+      "description": "Primary goal or purpose of the agent"
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Supported input types"
+        },
+        "maxLength": {
+          "type": "number",
+          "description": "Maximum input length in characters"
+        }
+      },
+      "required": ["types"]
+    },
+    "organization": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization name"
+        },
+        "team": {
+          "type": "string",
+          "description": "Team name within organization"
+        },
+        "department": {
+          "type": "string",
+          "description": "Department within organization"
+        }
+      },
+      "required": ["name"]
+    },
+    "response": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["text", "markdown", "json"],
+          "description": "Output format type"
+        },
+        "style": {
+          "type": "string",
+          "description": "Response style preference"
+        },
+        "tone": {
+          "type": "string",
+          "description": "Response tone preference"
+        }
+      },
+      "required": ["format"]
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of specific skills the agent possesses"
+    },
+    "partners": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of partner agents for collaboration"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of specific tasks the agent can perform"
+    },
+    "hooks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of lifecycle hooks for the agent"
+    },
+    "docs": {
+      "type": "string",
+      "description": "Documentation reference path"
+    },
+    "modelConfig": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["openai", "anthropic", "gemini"],
+          "description": "AI model provider"
+        },
+        "model": {
+          "type": "string",
+          "description": "Specific model identifier"
+        },
+        "apiKey": {
+          "type": "string",
+          "description": "API key for the provider"
+        },
+        "baseURL": {
+          "type": "string",
+          "description": "Base URL for API endpoint"
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Model temperature setting"
+        },
+        "maxTokens": {
+          "type": "number",
+          "description": "Maximum tokens for response"
+        }
+      },
+      "required": ["provider", "model"]
+    }
+  },
+  "required": [
+    "name",
+    "roles",
+    "instructions",
+    "goal",
+    "input",
+    "organization",
+    "response",
+    "modelConfig"
+  ]
+}

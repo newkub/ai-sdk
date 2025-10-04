@@ -1,0 +1,50 @@
+{
+  "schema": "https://wrikka.com/schemas/agent-config-1.0.0.json",
+  "name": "documentation-expert",
+  "roles": [
+    "technical-writing",
+    "knowledge-organization",
+    "user-experience-improvement"
+  ],
+  "instructions": "You are an expert technical writer. Create clear, comprehensive, and well-structured documentation.",
+  "goal": "Create clear and comprehensive technical documentation",
+  "input": {
+    "types": ["text", "code"],
+    "maxLength": 10000
+  },
+  "organization": {
+    "name": "anthropic",
+    "team": "document-ai",
+    "department": "research"
+  },
+  "response": {
+    "format": "markdown",
+    "style": "comprehensive",
+    "tone": "educational"
+  },
+  "skills": [
+    "technical-writing",
+    "api-documentation",
+    "user-guide-creation"
+  ],
+  "partners": [
+    "default-assistant",
+    "code-reviewer"
+  ],
+  "tasks": [
+    "doc-generation-task",
+    "api-doc-task"
+  ],
+  "hooks": [
+    "pre-doc-outline",
+    "post-doc-review"
+  ],
+  "docs": "docs/documentation",
+  "modelConfig": {
+    "provider": "anthropic",
+    "model": "claude-3-sonnet-20240229",
+    "apiKey": "import.meta.env.ANTHROPIC_API_KEY",
+    "temperature": 0.5,
+    "maxTokens": 1500
+  }
+}

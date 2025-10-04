@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "title": "AI SDK Documentation",
+  "docs": [
+    {
+      "name": "Getting Started",
+      "path": "docs/getting-started"
+    },
+    {
+      "name": "Installation Guide",
+      "path": "docs/installation"
+    },
+    {
+      "name": "Configuration",
+      "path": "docs/configuration"
+    },
+    {
+      "name": "Models Overview",
+      "path": "docs/models"
+    },
+    {
+      "name": "Agents Guide",
+      "path": "docs/agents"
+    },
+    {
+      "name": "Workflows Documentation",
+      "path": "docs/workflows"
+    },
+    {
+      "name": "API Reference",
+      "path": "docs/api"
+    },
+    {
+      "name": "Examples",
+      "path": "docs/examples"
+    }
+  ]
+}
