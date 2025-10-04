@@ -2,18 +2,20 @@
   "name": "ai-sdk",
   "version": "1.0.0",
   "type": "module",
-  "packageManager": "bun@1.2.22",
+  "packageManager": "bun@1.2.23",
   "workspaces": [
-    "sdk"
+    "sdk",
+    "examples"
   ],
   "scripts": {
     "build": "turbo build",
     "test": "turbo test",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "update:deps": "bunx taze -r -w",
+    "format": "turbo format",
+    "update:deps": "bunx taze -r -w"
   },
   "devDependencies": {
-    "turbo": "^2.0.0"
+    "turbo": "^2.5.8"
   }
 }
